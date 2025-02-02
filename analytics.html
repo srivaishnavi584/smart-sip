@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART SIP</title>
+    <!-- Linking Google font link for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+          font-family:Arial, sans-serif;
+          margin-left: 90px;
+          margin-bottom: 30px;
+          padding: 0px;
+          background: linear-gradient(90deg, #ff7eb3, rgb(125, 206, 238));
+          color: black;
+          line-height: 1.6;
+      }
+      header {
+            
+            color: black;
+            padding: 30px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-decoration: underline;
+            margin-top: 0%;
+            text-align: center;
+            
+        }
+      table {
+          width: 80%;
+          border-collapse: collapse;
+          margin-top: 20px;
+         margin-left: 100px;
+         margin-bottom: 40px;
+          background-color: rgb(238, 225, 225);
+          color: black;
+      }
+      th, td {
+          border: 1px solid white;
+          padding: 20px;
+          text-align: left;
+      }
+      th {
+          background-color:rgb(34, 33, 33);
+          color: rgb(255, 255, 255);
+          text-align: center;
+      }
+      .highlight {
+          background-color: rgb(187, 252, 89);
+      }
+      h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+       }
+       .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+canvas {
+    margin: 20px auto;
+    display: block;
+}
+.description {
+    margin: 20px 0;
+}
+  </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+          <img src="logo icon.jpg" alt="logo">
+        </div>
+       <nav>
+        <ul class="links">
+            <h4>Main Menu</h4>
+            <li>
+              <span class="material-symbols-outlined">dashboard</span>
+              <a href="dashboard.html">DASHBOARD</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">show_chart</span>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">flag</span>
+              <a href="features.html">FEATURES</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">group</span>
+              <a href="types.html">TYPES</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">ambient_screen</span>
+              <a href="calculate.html">CALCULATE</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">monitoring</span>
+              <a href="analytics.html">ANALYTICS</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              <a href="message.html">MESSAGE</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">settings</span>
+              <a href="settings.html">SETTINGS</a>
+            </li>
+            <li class="logout-link">
+              <span class="material-symbols-outlined">logout</span>
+              <a href="#">LOGOUT</a>
+            </li>
+          </ul>
+        </aside>
+    </nav>
+    <header>ANALYTICS</header>
+    <h1>SIP vs RD vs FD - AN OVERVIEW</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>FEATURE</th>
+                <th>SIP (Systematic Investment Plan)</th>
+                <th>RD (Recurring Deposit)</th>
+                <th>FD (Fixed Deposit)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Return Potential</td>
+                <td class="highlight">Market-linked (10-15% annually)</td>
+                <td>Fixed (5-7% annually)</td>
+                <td>Fixed (5-7% annually)</td>
+            </tr>
+            <tr>
+                <td>2. Risk</td>
+                <td class="highlight">Moderate (depends on market performance)</td>
+                <td>Low</td>
+                <td>Low</td>
+            </tr>
+            <tr>
+                <td>3. Flexibility</td>
+                <td class="highlight">High (start/stop anytime)</td>
+                <td>Low (fixed tenure)</td>
+                <td>Low (fixed tenure)</td>
+            </tr>
+            <tr>
+                <td>4. Investment Type</td>
+                <td class="highlight">Mutual Funds (Equity, Debt, Hybrid)</td>
+                <td>Bank deposit</td>
+                <td>Bank deposit</td>
+            </tr>
+            <tr>
+                <td>5. Tax Benefits</td>
+                <td class="highlight">ELSS SIP offers tax benefits (up to ₹1.5L under 80C)</td>
+                <td>None</td>
+                <td>Tax-saving FD offers benefits (up to ₹1.5L under 80C)</td>
+            </tr>
+            <tr>
+                <td>6. Liquidity</td>
+                <td class="highlight">High (can redeem anytime)</td>
+                <td>Moderate (penalty on premature withdrawal)</td>
+                <td>Moderate (penalty on premature withdrawal)</td>
+            </tr>
+            <tr>
+                <td>7. Minimum Investment</td>
+                <td class="highlight">₹500 per month</td>
+                <td>₹500 per month</td>
+                <td>₹5,000 (one-time)</td>
+            </tr>
+            <tr>
+                <td>8. Suitable for</td>
+                <td class="highlight">Wealth creation (long-term)</td>
+                <td>Short to medium-term savings</td>
+                <td>Short to medium-term savings</td>
+            </tr>
+            <tr>
+                <td>9. Inflation Impact</td>
+                <td class="highlight">Beats inflation (market-linked growth)</td>
+                <td>Does not beat inflation</td>
+                <td>Does not beat inflation</td>
+            </tr>
+            <tr>
+              <td>10. Example (₹10,000/month for 10 years)</td>
+              <td class="highlight">₹23,23,391 (at 12% annual return)</td>
+              <td>₹15,49,007 (at 6% annual return)</td>
+              <td>₹15,49,007 (at 6% annual return)</td>
+          </tr>
+        </tbody>
+    </table>
+  
+    <div class="container">
+      <h1>SIP vs RD vs FD: A Comprehensive Comparison</h1>
+
+      <p class="description">
+          When it comes to saving and growing your money, choosing the right investment plan is crucial. Here, we compare Systematic Investment Plan (SIP), Recurring Deposit (RD), and Fixed Deposit (FD) from the perspective of long-term benefits. Using an example, we analyze how these instruments perform in terms of returns, flexibility, and risk. 
+      </p>
+
+      <h2>Example</h2>
+      <p>
+          Let us assume an individual invests ₹5,000 per month for 10 years in each of these instruments. The interest rates are as follows:
+      </p>
+      <ul>
+          <li><strong>SIP:</strong> 12% annualized return (average mutual fund growth)</li>
+          <li><strong>RD:</strong> 6% annual interest rate</li>
+          <li><strong>FD:</strong> 7% annual interest rate</li>
+      </ul>
+
+      <h2>Investment Growth Over Time</h2>
+      <canvas id="comparisonChart" width="800" height="400"></canvas>
+
+      <h2>Breakdown of Returns</h2>
+      <canvas id="returnsBreakdown" width="800" height="400"></canvas>
+
+      <h2>Conclusion</h2>
+      <p>
+          SIP offers the highest returns over a long-term horizon due to the power of compounding and market-linked growth. While RD and FD are safer, they yield lower returns. Choosing between these options depends on your risk appetite, financial goals, and investment horizon.
+      </p>
+  </div>
+
+  <script>
+      // Data for the example
+      const months = 10 * 12; // 5 years
+      const sipRate = 0.12 / 12; // Monthly SIP rate
+      const rdRate = 0.06 / 12; // Monthly RD rate
+      const fdRate = 0.07; // Annual FD rate
+      const monthlyInvestment = 500;
+
+      let sipValues = [], rdValues = [], fdValues = [];
+      let sipTotal = 0, rdTotal = 0;
+
+      for (let i = 1; i <= months; i++) {
+          // SIP Calculation
+          sipTotal = (sipTotal + monthlyInvestment) * (1 + sipRate);
+          sipValues.push(sipTotal);
+
+          // RD Calculation
+          rdTotal += monthlyInvestment * Math.pow(1 + rdRate, i / 12);
+          rdValues.push(rdTotal);
+      }
+
+      // FD Calculation
+      const fdTotal = monthlyInvestment * months * Math.pow(1 + fdRate, 5);
+      fdValues = Array(months).fill(fdTotal);
+
+      // Chart 1: Investment Growth Over Time
+      const ctx1 = document.getElementById('comparisonChart').getContext('2d');
+      new Chart(ctx1, {
+          type: 'line',
+          data: {
+              labels: Array.from({ length: months }, (_, i) => `Month ${i + 1}`),
+              datasets: [
+                  {
+                      label: 'SIP',
+                      data: sipValues,
+                      borderColor: 'rgb(9, 235, 9)',
+                      fill: false,
+                  },
+                  {
+                      label: 'RD',
+                      data: rdValues,
+                      borderColor: 'rgb(255,0,0)',
+                      fill: false,
+                  },
+                  {
+                      label: 'FD',
+                      data: fdValues,
+                      borderColor: 'rgb(0, 0, 139)',
+                      fill: false,
+                  },
+              ],
+          },
+          options: {
+              responsive: true,
+              plugins: {
+                  legend: {
+                      position: 'top',
+                  },
+              },
+              scales: {
+                  y: {
+                      title: {
+                          display: true,
+                          text: 'Investment Value (₹)'
+                      }
+                  },
+                  x: {
+                      title: {
+                          display: true,
+                          text: 'Time (Months)'
+                      }
+                  }
+              }
+          }
+      });
+
+      // Chart 2: Breakdown of Returns
+      const ctx2 = document.getElementById('returnsBreakdown').getContext('2d');
+      new Chart(ctx2, {
+          type: 'bar',
+          data: {
+              labels: ['SIP', 'RD', 'FD'],
+              datasets: [
+                  {
+                      label: 'Principal Amount (₹)',
+                      data: [monthlyInvestment * months, monthlyInvestment * months, monthlyInvestment * months],
+                      backgroundColor: 'rgb(0, 100, 0)',
+                  },
+                  {
+                      label: 'Returns (₹)',
+                      data: [sipTotal - monthlyInvestment * months, rdTotal - monthlyInvestment * months, fdTotal - monthlyInvestment * months],
+                      backgroundColor: 'rgb(0, 0, 139)',
+                  },
+              ],
+          },
+          options: {
+              responsive: true,
+              plugins: {
+                  legend: {
+                      position: 'top',
+                  },
+              },
+              scales: {
+                  y: {
+                      title: {
+                          display: true,
+                          text: 'Amount (₹)'
+                      }
+                  },
+              }
+          }
+      });
+  </script>
+</body>
+</html>

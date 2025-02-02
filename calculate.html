@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART SIP</title>
+    <!-- Linking Google font link for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="stylecalculate.css">
+    
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+          <img src="logo icon.jpg" alt="logo">
+        </div>
+    <nav>
+        <ul class="links">
+            <h4>Main Menu</h4>
+            <li>
+              <span class="material-symbols-outlined">dashboard</span>
+              <a href="dashboard.html">DASHBOARD</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">show_chart</span>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">flag</span>
+              <a href="features.html">FEATURES</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">group</span>
+              <a href="types.html">TYPES</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">ambient_screen</span>
+              <a href="calculate.html">CALCULATE</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">monitoring</span>
+              <a href="analytics.html">ANALYTICS</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              <a href="message.html">MESSAGE</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">settings</span>
+              <a href="settings.html">SETTINGS</a>
+            </li>
+            <li class="logout-link">
+              <span class="material-symbols-outlined">logout</span>
+              <a href="#">LOGOUT</a>
+            </li>
+          </ul>
+        </aside>
+    </nav>
+    <div class="container">
+      <h1>SIP CALCULATOR</h1>
+      <div class="row">
+          <div class="form-container">
+              <form id="sipForm">
+                  <label for="monthlyInvestment">Monthly Investment (₹):</label>
+                  <input type="number" id="monthlyInvestment" required>
+
+                  <label for="rateOfReturn">Expected Rate of Return (%):</label>
+                  <input type="number" id="rateOfReturn" step="0.1" required>
+
+                  <label for="timePeriod">Time Period (Years):</label>
+                  <input type="number" id="timePeriod" required>
+
+                  <button type="submit">Calculate</button>
+              </form>
+          </div>
+
+          <div class="chart-container">
+              <canvas id="pieChart" class="pie-chart animate"></canvas>
+          </div>
+      </div>
+
+      <div class="result" id="result">
+          <div class="table-container">
+              <table id="resultTable" class="animate">
+                  <thead>
+                      <tr>
+                          <th>Year</th>
+                          <th>Investment (₹)</th>
+                          <th>Returns (₹)</th>
+                          <th>Total Value (₹)</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- Results will be dynamically added here -->
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+      const form = document.getElementById('sipForm');
+      const pieChartCanvas = document.getElementById('pieChart');
+      const resultTable = document.getElementById('resultTable').querySelector('tbody');
+      let pieChart;
+
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const monthlyInvestment = parseFloat(document.getElementById('monthlyInvestment').value);
+          const rateOfReturn = parseFloat(document.getElementById('rateOfReturn').value) / 100 / 12;
+          const timePeriod = parseInt(document.getElementById('timePeriod').value);
+
+          const months = timePeriod * 12;
+          let totalInvestment = 0;
+          let totalValue = 0;
+
+          resultTable.innerHTML = '';
+
+          for (let i = 1; i <= timePeriod; i++) {
+              totalInvestment += monthlyInvestment * 12;
+              totalValue = monthlyInvestment * (((1 + rateOfReturn) ** (i * 12) - 1) / rateOfReturn) * (1 + rateOfReturn);
+
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                  <td>${i}</td>
+                  <td>${(monthlyInvestment * 12 * i).toFixed(2)}</td>
+                  <td>${(totalValue - totalInvestment).toFixed(2)}</td>
+                  <td>${totalValue.toFixed(2)}</td>
+              `;
+              resultTable.appendChild(row);
+          }
+
+          const returns = totalValue - totalInvestment;
+
+          if (pieChart) pieChart.destroy();
+
+          pieChart = new Chart(pieChartCanvas, {
+              type: 'pie',
+              data: {
+                  labels: ['Total Investment', 'Returns'],
+                  datasets: [{
+                      data: [totalInvestment, returns],
+                      backgroundColor: ['#007bff', '#28a745'],
+                  }],
+              },
+              options: {
+                  responsive: true,
+              },
+          });
+      });
+  </script>
+  
+</body>
+</html>

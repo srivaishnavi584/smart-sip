@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART SIP</title>
+    <!-- Linking Google font link for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+     body {
+    font-family: 'Arial', sans-serif;
+    margin-left: 90px;
+    padding: 0;
+    background:linear-gradient(90deg, #ff7eb3, rgb(125, 206, 238));
+    color: black;
+    text-align: center;
+}
+
+header {
+    background-color:transparent;
+    padding: 20px;
+    font-size: 24px;
+    color: #0c0909;
+    text-decoration: underline;
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.sip-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    color: #0c0909;
+}
+
+.sip-card:hover {
+    transform: scale(1.05);
+}
+
+canvas {
+    max-width: 1000px;
+    
+}
+.chart-container {
+    background: transparent;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.chart-container:hover {
+    transform: scale(1.05);
+}
+
+
+    </style>
+</head>
+<body>
+  <header>
+    <h1>TYPES OF SIP'S - A Story of Four Friends</h1>
+</header>
+    <aside class="sidebar">
+        <div class="logo">
+          <img src="logo icon.jpg" alt="logo">
+        </div>
+    <nav>
+        <ul class="links">
+            <h4>Main Menu</h4>
+            <li>
+              <span class="material-symbols-outlined">dashboard</span>
+              <a href="dashboard.html">DASHBOARD</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">show_chart</span>
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">flag</span>
+              <a href="features.html">FEATURES</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">group</span>
+              <a href="types.html">TYPES</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">ambient_screen</span>
+              <a href="calculate.html">CALCULATE</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">monitoring</span>
+              <a href="analytics.html">ANALYTICS</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              <a href="message.html">MESSAGE</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">settings</span>
+              <a href="settings.html">SETTINGS</a>
+            </li>
+            <li class="logout-link">
+              <span class="material-symbols-outlined">logout</span>
+              <a href="#">LOGOUT</a>
+            </li>
+          </ul>
+        </aside>
+    </nav>
+    <div class="grid-container">
+      <div class="sip-card">
+          <h2>REGULAR SIP </h2><br><h3>Amit's Steady Journey</h3><br>
+          <p>Amit was a salaried employee working as a software engineer. He wanted a stable and disciplined way to invest every month without worrying about market ups and downs.</p><br>
+          <p>Mr. Sharma suggested the Regular SIP, where Amit could invest a fixed amount (₹5,000) every month in a mutual fund. Over time, his money would grow due to rupee cost averaging (buying more units when prices are low and fewer when prices are high) and compounding.</p><br>
+          <p><h3>EXAMPLE</h3>Amit started a SIP of ₹5,000 in an equity mutual fund. Over 10 years, with an average return of 12%, his investment grew significantly, helping him build wealth for his future.</p>
+          <canvas id="regularSIPChart"></canvas>
+        </div>
+
+      <div class="sip-card">
+          <h2>TOP-UP SIP</h2><br><h3>Ravi’s Growth Mindset</h3><br>
+          <p>Ravi was a young professional with increasing earnings. He wanted to invest but also increase his contribution whenever he got a salary hike.</p><br>
+          <p>Mr. Sharma recommended the Top-Up SIP, where he could start with ₹3,000 per month and increase it by ₹500 every year. This allowed him to grow his investments as his income increased.</p><br>
+          <p><h3>EXAMPLE</h3>Ravi started with ₹3,000 per month. After a year, he increased it to ₹3,500, then ₹4,000, and so on. In 10 years, he had invested much more than a fixed SIP, resulting in higher returns.</p>
+          <canvas id="topUpSIPChart"></canvas>
+        </div>
+
+      <div class="sip-card">
+          <h2>FLEXIBLE SIP</h2><br><h3>Priya’s Variable Income</h3><br>
+          <p>Priya was a freelance graphic designer, and her income fluctuated every month. Some months, she earned well; other times, she had fewer clients.</p><br>
+          <p>For her, Mr. Sharma suggested a Flexible SIP, where she could choose how much to invest each month instead of a fixed amount. She could contribute ₹2,000 in a slow month and ₹10,000 in a good month.</p><br>
+          <p><h3>EXAMPLE</h3>In January, Priya invested ₹2,000; in February, ₹5,000; in March, ₹8,000, depending on her earnings. This allowed her to stay invested without financial strain.</p>
+          <canvas id="flexibleSIPChart"></canvas>
+        </div>
+
+      <div class="sip-card">
+          <h2>PERPETUAL SIP</h2><br><h3>Meera’s Long-Term Vision</h3><br>
+          <p>Meera, an ambitious entrepreneur, wanted to invest for a long time but didn't want the hassle of renewing her SIPs every few years.</p><br>
+          <p>Mr. Sharma suggested a Perpetual SIP, where she did not set an end date—it would continue until she decided to stop. This ensured she stayed invested without worrying about renewal deadlines.</p><br>
+          <p><h3>EXAMPLE</h3>Meera started investing ₹7,000 per month in a perpetual SIP. Even after 15 years, she continued investing without any need for renewal, helping her build a large retirement corpus.</p>
+          <canvas id="perpetualSIPChart"></canvas>
+        </div>
+  </div>
+<p><h3>Each friend had a different financial situation, but they all found the right type of SIP for their needs. SIPs are flexible and can be tailored to different financial goals, income levels, and risk appetites.
+
+  So, whether you are like Amit (regular earner), Ravi (salary grows over time), Priya (variable income), or Meera (long-term planner),THERE IS A SIP FOR EVERYONE!!!</h3></p>
+  <section class="chart-container">
+    <h2>📊 Investment vs. Returns</h2>
+    <canvas id="sipBarChart"></canvas>
+</section>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Investment & Returns Data
+    const sipTypes = ["Regular SIP", "Top-Up SIP", "Flexible SIP", "Perpetual SIP"];
+    const investmentData = [6, 7, 5, 8]; // Investment in Lakhs
+    const returnData = [10, 12, 8, 15]; // Returns in Lakhs
+
+    // 📊 Bar Chart - Investment vs. Returns
+    const ctxBar = document.getElementById("sipBarChart").getContext("2d");
+    new Chart(ctxBar, {
+        type: "bar",
+        data: {
+            labels: sipTypes,
+            datasets: [
+                {
+                    label: "Investment (₹ Lakhs)",
+                    data: investmentData,
+                    backgroundColor: "#4CAF50"
+                },
+                {
+                    label: "Returns (₹ Lakhs)",
+                    data: returnData,
+                    backgroundColor: "#FF9800"
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // 💰 Pie Chart - Percentage of Returns
+    const ctxPie = document.getElementById("sipPieChart").getContext("2d");
+    new Chart(ctxPie, {
+        type: "pie",
+        data: {
+            labels: sipTypes,
+            datasets: [{
+                data: returnData,
+                backgroundColor: ["#4CAF50", "#FF9800", "#2196F3", "#9C27B0"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+});
+
+
+ </script>
+  
+  
+</body>
+</html>
